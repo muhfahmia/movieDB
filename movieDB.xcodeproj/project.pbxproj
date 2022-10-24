@@ -13,7 +13,15 @@
 		5D433CD028FDBB7D00236557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D433CCE28FDBB7D00236557 /* Main.storyboard */; };
 		5D433CD228FDBB7E00236557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D433CD128FDBB7E00236557 /* Assets.xcassets */; };
 		5D433CD528FDBB7E00236557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D433CD328FDBB7E00236557 /* LaunchScreen.storyboard */; };
-		5DE1840A28FFBA1C00EC1F4F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE1840928FFBA1C00EC1F4F /* Button.swift */; };
+		5DE1840C28FFDD3C00EC1F4F /* RequestTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE1840B28FFDD3C00EC1F4F /* RequestTokenModel.swift */; };
+		5DE1840F28FFE15B00EC1F4F /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE1840E28FFE15B00EC1F4F /* RequestToken.swift */; };
+		5DE1841128FFE1EF00EC1F4F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE1841028FFE1EF00EC1F4F /* NetworkService.swift */; };
+		5DE184132900018700EC1F4F /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE184122900018700EC1F4F /* MovieModel.swift */; };
+		5DE18415290014D200EC1F4F /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE18414290014D200EC1F4F /* Authentication.swift */; };
+		5DE184172900152C00EC1F4F /* UserDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE184162900152C00EC1F4F /* UserDefaultModel.swift */; };
+		5DE184192900ED9800EC1F4F /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE184182900ED9800EC1F4F /* GlobalFunction.swift */; };
+		5DE1841B2903E8D300EC1F4F /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE1841A2903E8D300EC1F4F /* AuthModel.swift */; };
+		5DE1841D2903E8E000EC1F4F /* SessionAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE1841C2903E8E000EC1F4F /* SessionAuthModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +33,15 @@
 		5D433CD128FDBB7E00236557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D433CD428FDBB7E00236557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D433CD628FDBB7E00236557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5DE1840928FFBA1C00EC1F4F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		5DE1840B28FFDD3C00EC1F4F /* RequestTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTokenModel.swift; sourceTree = "<group>"; };
+		5DE1840E28FFE15B00EC1F4F /* RequestToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
+		5DE1841028FFE1EF00EC1F4F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5DE184122900018700EC1F4F /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		5DE18414290014D200EC1F4F /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5DE184162900152C00EC1F4F /* UserDefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultModel.swift; sourceTree = "<group>"; };
+		5DE184182900ED9800EC1F4F /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
+		5DE1841A2903E8D300EC1F4F /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		5DE1841C2903E8E000EC1F4F /* SessionAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAuthModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 		5D433CC728FDBB7D00236557 /* movieDB */ = {
 			isa = PBXGroup;
 			children = (
+				5DE1840D28FFE0C400EC1F4F /* Network */,
 				5DE1840828FFBA0100EC1F4F /* Utils */,
 				5D433CDE28FDBBF700236557 /* Model */,
 				5D433CDC28FDBBC100236557 /* View */,
@@ -90,6 +107,11 @@
 		5D433CDE28FDBBF700236557 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DE184122900018700EC1F4F /* MovieModel.swift */,
+				5DE1840B28FFDD3C00EC1F4F /* RequestTokenModel.swift */,
+				5DE184162900152C00EC1F4F /* UserDefaultModel.swift */,
+				5DE1841A2903E8D300EC1F4F /* AuthModel.swift */,
+				5DE1841C2903E8E000EC1F4F /* SessionAuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,9 +127,19 @@
 		5DE1840828FFBA0100EC1F4F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5DE1840928FFBA1C00EC1F4F /* Button.swift */,
+				5DE184182900ED9800EC1F4F /* GlobalFunction.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5DE1840D28FFE0C400EC1F4F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5DE1841028FFE1EF00EC1F4F /* NetworkService.swift */,
+				5DE1840E28FFE15B00EC1F4F /* RequestToken.swift */,
+				5DE18414290014D200EC1F4F /* Authentication.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +213,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE184132900018700EC1F4F /* MovieModel.swift in Sources */,
 				5D433CCD28FDBB7D00236557 /* LoginViewController.swift in Sources */,
+				5DE1840C28FFDD3C00EC1F4F /* RequestTokenModel.swift in Sources */,
 				5D433CC928FDBB7D00236557 /* AppDelegate.swift in Sources */,
+				5DE1841D2903E8E000EC1F4F /* SessionAuthModel.swift in Sources */,
+				5DE1840F28FFE15B00EC1F4F /* RequestToken.swift in Sources */,
+				5DE1841128FFE1EF00EC1F4F /* NetworkService.swift in Sources */,
 				5D433CCB28FDBB7D00236557 /* SceneDelegate.swift in Sources */,
-				5DE1840A28FFBA1C00EC1F4F /* Button.swift in Sources */,
+				5DE184172900152C00EC1F4F /* UserDefaultModel.swift in Sources */,
+				5DE184192900ED9800EC1F4F /* GlobalFunction.swift in Sources */,
+				5DE18415290014D200EC1F4F /* Authentication.swift in Sources */,
+				5DE1841B2903E8D300EC1F4F /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
