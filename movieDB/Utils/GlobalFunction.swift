@@ -29,6 +29,14 @@ extension UIViewController {
         }
     }
     
+    func getScreenSize(type:String) -> CGFloat {
+        if type == "width" {
+            return UIScreen.main.bounds.width
+        }else{
+            return UIScreen.main.bounds.height
+        }
+    }
+    
     func customDate(_ minute:Double, _ formatDate:String) -> Date {
         let date = Date().addingTimeInterval(minute * 60)
         let dateformat = DateFormatter()
@@ -43,6 +51,37 @@ extension UIViewController {
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = formatDate
         return dateFormat.string(from: date)
+    }
+    
+    func imageFromServerURL(_ URLString: String,completion:@escaping(UIImage) -> Void) {
+        //If imageurl's imagename has space then this line going to work for this
+        let imageServerUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        if let url = URL(string: imageServerUrl) {
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                //print("RESPONSE FROM API: \(response)")
+                if error != nil {
+                    print("ERROR LOADING IMAGES FROM URL: \(String(describing: error))")
+                    return
+                }
+                DispatchQueue.main.async {
+                    if let data = data {
+                        if let downloadedImage = UIImage(data: data) {
+                            completion(downloadedImage)
+                        }
+                    }
+                }
+            }).resume()
+        }
+    }
+    
+    func loadingIndicator(_ indicator:UIActivityIndicatorView,_ status:String) -> Void {
+        if status == "show" {
+            indicator.isHidden = false
+            indicator.startAnimating()
+        }else{
+            indicator.stopAnimating()
+            indicator.isHidden = true
+        }
     }
     
     func createAlert(_ title:String,_ message:String) -> Void {
