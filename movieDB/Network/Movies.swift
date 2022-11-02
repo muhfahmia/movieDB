@@ -8,9 +8,9 @@
 import Foundation
 
 class MoviesNetwork {
-    func getMovies(_ type:String ,completion: @escaping ([Movie]) -> Void) {
+    func getMovies(_ type:String ,_ page:Int, completion: @escaping ([Movie]) -> Void) {
         
-        var typeMovies = ""
+        var typeMovies = type
         switch typeMovies {
         case "popular":
             typeMovies = NetworkService.pathPopularMovies
@@ -26,7 +26,8 @@ class MoviesNetwork {
         
         var components = URLComponents(string: NetworkService.baseUrl+typeMovies)!
             components.queryItems = [
-                URLQueryItem(name: "api_key", value: NetworkService.apiKey)
+                URLQueryItem(name: "api_key", value: NetworkService.apiKey),
+                URLQueryItem(name: "page", value: String(describing: page))
             ]
         let request = URLRequest(url: components.url!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

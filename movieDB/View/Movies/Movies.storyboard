@@ -8,39 +8,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Filter Movies View Controller-->
+        <scene sceneID="Z44-Of-cWR">
             <objects>
-                <viewController storyboardIdentifier="MoviesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MoviesViewController" customModule="movieDB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController storyboardIdentifier="FilterMoviesViewController" id="FqY-e7-ivi" customClass="FilterMoviesViewController" customModule="movieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wbk-Hr-Nfs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw1-By-gEl">
-                                <rect key="frame" x="174" y="366" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemPinkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SHp-Xc-jhW">
+                                <rect key="frame" x="0.0" y="47" width="390" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="F2p-Ld-Us7"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-nW-spI">
+                                <rect key="frame" x="30" y="317" width="330" height="35"/>
+                                <color key="backgroundColor" red="0.21738642450000001" green="0.27561053629999999" blue="0.3534670472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.21738642450000001" green="0.27561053629999999" blue="0.3534670472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search" cornerStyle="small">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.21738642450000001" green="0.27561053629999999" blue="0.3534670472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="filterSearch:" destination="FqY-e7-ivi" eventType="touchUpInside" id="ibz-QZ-jOJ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="0Sq-lT-aAN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Sq-lT-aAN" firstAttribute="trailing" secondItem="pdT-nW-spI" secondAttribute="trailing" constant="30" id="LFu-Gj-LW6"/>
+                            <constraint firstItem="SHp-Xc-jhW" firstAttribute="leading" secondItem="0Sq-lT-aAN" secondAttribute="leading" id="LW9-Sm-Ztn"/>
+                            <constraint firstItem="0Sq-lT-aAN" firstAttribute="trailing" secondItem="SHp-Xc-jhW" secondAttribute="trailing" id="NjZ-d1-qHg"/>
+                            <constraint firstItem="SHp-Xc-jhW" firstAttribute="top" secondItem="0Sq-lT-aAN" secondAttribute="top" id="WmA-pm-B6m"/>
+                            <constraint firstItem="pdT-nW-spI" firstAttribute="top" secondItem="SHp-Xc-jhW" secondAttribute="bottom" constant="20" id="adf-FD-0oZ"/>
+                            <constraint firstItem="pdT-nW-spI" firstAttribute="leading" secondItem="0Sq-lT-aAN" secondAttribute="leading" constant="30" id="chb-b6-n0v"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lAo-QV-263"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filterTableView" destination="SHp-Xc-jhW" id="khU-AS-2A9"/>
+                        <outlet property="filterTableViewHeight" destination="F2p-Ld-Us7" id="kH2-nX-vqF"/>
+                        <outlet property="searchButton" destination="pdT-nW-spI" id="Pzt-eT-3x6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEI-I9-q4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2946" y="-2702"/>
+            <point key="canvasLocation" x="1870.7692307692307" y="-2702.1327014218009"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -121,7 +121,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sign In" image="person.fill.questionmark" catalog="system" id="y6m-Bj-Nv5"/>
-                    <navigationItem key="navigationItem" title="Sign In" id="jGz-cK-LeN"/>
                     <connections>
                         <outlet property="password" destination="38z-uU-Vvi" id="EMg-Np-fov"/>
                         <outlet property="signIn" destination="8i2-Hy-fDz" id="DoU-C2-Pqw"/>
@@ -190,14 +189,28 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-7S-7Xw">
+                                <rect key="frame" x="150.66666666666666" y="711.66666666666663" width="89" height="34.333333333333371"/>
+                                <color key="backgroundColor" red="0.050980389119999997" green="0.1411764771" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.050980389119999997" green="0.1411764771" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="slider.horizontal.3" catalog="system" title="Filter">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="filterButton:" destination="6T3-Jn-uaI" eventType="touchUpInside" id="cwb-dX-4OC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xBx-7X-2r8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xBx-7X-2r8" firstAttribute="trailing" secondItem="nnq-IJ-vH1" secondAttribute="trailing" id="2WK-Vc-k2f"/>
+                            <constraint firstItem="ApE-7S-7Xw" firstAttribute="centerX" secondItem="wtQ-KR-FXQ" secondAttribute="centerX" id="54E-Hi-XlO"/>
                             <constraint firstItem="nnq-IJ-vH1" firstAttribute="leading" secondItem="xBx-7X-2r8" secondAttribute="leading" id="D5M-Wt-t9Y"/>
                             <constraint firstItem="xBx-7X-2r8" firstAttribute="bottom" secondItem="nnq-IJ-vH1" secondAttribute="bottom" id="JoG-9P-91w"/>
                             <constraint firstItem="nnq-IJ-vH1" firstAttribute="top" secondItem="xBx-7X-2r8" secondAttribute="top" id="QTi-ee-Boy"/>
+                            <constraint firstItem="xBx-7X-2r8" firstAttribute="bottom" secondItem="ApE-7S-7Xw" secondAttribute="bottom" constant="15" id="dbd-bv-Tsf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movies" image="play.circle" catalog="system" id="tFs-d5-iBp"/>
@@ -205,17 +218,19 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="nnq-IJ-vH1" id="wjz-ES-cH4"/>
+                        <outlet property="filterBtn" destination="ApE-7S-7Xw" id="j4J-bG-ugu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnY-Jv-pDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5726" y="685"/>
+            <point key="canvasLocation" x="5724.6153846153848" y="684.59715639810429"/>
         </scene>
     </scenes>
     <resources>
         <image name="login" width="370" height="226.66667175292969"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="102"/>
         <image name="play.circle" catalog="system" width="128" height="123"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

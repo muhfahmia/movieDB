@@ -22,5 +22,10 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 0.3
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+//        self.moviesImageCV.image = nil
+    }
 
 }

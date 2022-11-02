@@ -63,11 +63,9 @@ extension UIViewController {
                     print("ERROR LOADING IMAGES FROM URL: \(String(describing: error))")
                     return
                 }
-                DispatchQueue.main.async {
-                    if let data = data {
-                        if let downloadedImage = UIImage(data: data) {
-                            completion(downloadedImage)
-                        }
+                if let data = data {
+                    if let downloadedImage = UIImage(data: data) {
+                        completion(downloadedImage)
                     }
                 }
             }).resume()
